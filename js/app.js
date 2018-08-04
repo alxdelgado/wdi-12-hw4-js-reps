@@ -162,22 +162,17 @@ console.log('JS is working')
 
 // Write code that will save the sum of all the numbers between 1 - 10 to a variable called bank_account. // 
 
-// let bank_account = 'sum'; 
+let bankAccount = 0; 
+for (let i = 1; i <= 10; i + 1){
+  bankAccount = bankAccount + i;
+}
+console.log(bankAccount); 
 
-// for (let bank_account = 1; bank_account <= 10; bank_account++) {
-   
-//     console.log(`${'sum'}`);
-  
-// }
-
-// let sum = 0;
-// let bank_account = 0;
-// while (bank_account < 10) {
-//   bank_account++;
-//   sum += bank_account;
-
-// };
-
+bankAccount = 0; 
+for (let i = 1; i <= 100; i + 1){
+  bankAccount = bankAccount +  2 * i;
+}
+console.log(bankAccount);
 
 ////////////// SAVINGS ACOUNT //////////////////
 
@@ -435,22 +430,189 @@ console.log('JS is working')
 
 ////////////////// TWO //////////////////////////
 
-const calculateCube = 7 => {
-  
-  
+const calculateCube = (num) => {
+  return Math.pow(num, 3);
 
 }
 
+console.log(calculateCube(5));
+
+////////////////// TWO //////////////////////////
+
+///////////////// THREE /////////////////////////
+
+const isAVowel = (sport) => {
+  const lowerSport = sport.toLowerCase(); 
+  const vowels = ['A', 'E', 'I', 'O', 'U'];
+  for(let i = 0; i < vowels.length; i++){
+    if(lowerSport === vowels[i]) {
+      return true;
+    }
+  }
+  return false; 
+}
+
+console.log(isAVowel('A'));
+
+///////////////// THREE /////////////////////////
 
 
+///////////////// FOUR /////////////////////////
 
+const getTwoLengths = (str1, str2) => {
+  const strLength = []; 
+  for(let i = 0; i < str.length; i++){
+    if(strLength === str1.length && strLength === str2.length){
+      return true
+    }
+  }
+  return false
+}
 
+console.log(getTwoLengths('Hank', 'Hippopopalous'));
 
+///////////////// FOUR /////////////////////////
 
+///////////////// FIVE /////////////////////////
 
+const getMultipleLengths = (arrOfStrings) => {
+  let strLength = []; 
+  for(let i = 0; i < strLength; i++) {
+    strLength === arrOfStrings[i].length;
+  }
+  return strLength; 
+}
 
+console.log('Sunwaves', 'was', 'the', 'best');
 
+///////////////// FIVE /////////////////////////
 
+///////////////// SIX /////////////////////////
 
+const maxOfThree = (num1, num2, num3) => {
+  const max = Math.max(num1, num2, num3)
+    return max; 
+}
 
+console.log(maxOfThree(6, 9, 1));
+
+///////////////// SIX /////////////////////////
+
+///////////////// SEVEN //////////////////////
+
+const printLongestWord = (arrOfStrings) => {
+  let maxLength = '';
+  for(let i = 0; i < arrOfStrings.length; i++) {
+    if(arrOfStrings[i].length > maxLength.length)
+      maxLength = arrOfStrings[i];
+  }
+    return maxLength;
+}
+
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
+
+///////////////// SEVEN //////////////////////
+
+///////////////// EIGHT //////////////////////
+
+const transmogrify = (num1, num2, num3) => {
+  const product = num1 * num2; 
+  return Math.pow(product, num3)
+}
+
+console.log(transmogrify(5, 3, 2));
+
+///////////////// EIGHT //////////////////////
+
+///////////////// SYNTAX //////////////////////
+
+// Define and describe the syntax of building an object. 
+
+// const - makes a variable constant through the function. 
+// someName - defines the variable used in the function. 
+// = sets the value of an object. 
+// {} are used to contain the values that define the object. 
+// 'key value pairs' are how we can call certain properties of the object. 
+// : used to seperate a 'key value pair'. 
+// value - this is what we be displayed when we call a key inside an object. 
+
+///////////////// SYNTAX //////////////////////
+
+///////////////// ME //////////////////////
+
+const me = {};
+
+  me.name = 'praslea'; 
+  me.age = 'unknown';
+  me.email = 'praslea@ro';
+
+  console.log(me); 
+  console.log(me.name); 
+  me.age = 1000;
+  console.log(me.age); 
+  me['place of residence'] = 'Chicago, IL'; 
+  console.log(['place of residence']);
+
+///////////////// ME //////////////////////
+
+///////////////// SLIMER //////////////////////
+
+const monster = {
+   name: "Slimer",
+   color: "greenish",
+   type: "plasm or ghost or something"
+}
+
+console.log(monster.name); 
+monster.type = creature; 
+console.log(monster.type);
+monster.age = 6; 
+console.log(monster.age); 
+
+///////////////// SLIMER //////////////////////
+
+///////////////// ORGE //////////////////////
+
+adventurer = {
+  name: 'Jack', 
+  type: 'Marine', 
+  hitPoints: 100, 
+  dps: 15, 
+  weapon: 'Rifle',
+  armorType: 'Heavy' 
+}
+
+enemy = {
+  hitPoints: 100, 
+  dps: 15, 
+  armorType: 'Medium'
+}
+
+const simBattle = (hero, monster) => {
+  const timeToDeathHero = hero.hitPoints / monster.dps; 
+  const timeToDeathMonster = monster.hitPoints / hero.dps; 
+
+  console.log('The hero has', + hero.hitPoints + 'hitpoints and' + hero.dps +'damage per second'); 
+  console.log('The monster has' + monster.hitPoints + 'hitpoints and' + monster.dps + 'damage per second'); 
+
+  const heroHealthRemaining = hero.hitPoints - (timeToDeathMonster * monster.dps); 
+  const mosnterHealthRemaining = monster.hitPoints - (timeToDeathHero * hero.dps); 
+
+  if(timeToDeathMonster > timeToDeathHero) {
+    console.log(hero.name + 'has died'); 
+    console.log('The monster has' + mosnterHealthRemaining + 'HP left'); 
+    return false;
+
+  } else {
+    console.log('Congratulations ' + hero.name + 'has defeated the monster.'); 
+    console.log(hero.name + 'has ' + heroHealthRemaining + 'HP left.');
+    return true;
+
+  }
+
+}
+
+simBattle(adventurer, enemy); 
+
+///////////////// ORGE //////////////////////
 
